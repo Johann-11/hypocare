@@ -131,6 +131,12 @@ async function sendeAnfrage() {
     alert("Bitte geben Sie Ihre Symptome ein.");
     return;
   }
+
+  // Begrenze Eingabelänge auf 200 Zeichen
+  if (userInput.length > 200) {
+    alert("Bitte kürzen Sie Ihre Eingabe auf maximal 200 Zeichen.");
+    return;
+  }
   
   // Prüfe Rate-Limits (Client-seitig)
   const rateLimitCheck = checkRateLimit();

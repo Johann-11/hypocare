@@ -126,7 +126,7 @@ app.post("/diagnose", async (req, res) => {
 
   // Input-Validierung und Sanitization
   const validation = validateAndSanitizeInput(userInput, {
-    maxLength: 2000,
+    maxLength: 200,
     minLength: 3,
     allowHTML: false
   });
