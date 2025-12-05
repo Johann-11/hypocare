@@ -2,8 +2,8 @@
 // Speichert Anfragen in LocalStorage
 
 const RATE_LIMITS = {
-  PER_DAY: 5,
-  PER_MONTH: 50
+  PER_DAY: 3,
+  PER_MONTH: 20
 };
 
 /**

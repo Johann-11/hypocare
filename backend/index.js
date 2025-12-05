@@ -30,7 +30,7 @@ const openai = new OpenAI({
 });
 
 // Rate-Limiting: Globale Tagesbegrenzung (300 Anfragen/Tag)
-const GLOBAL_DAILY_LIMIT = 300;
+const GLOBAL_DAILY_LIMIT = 50;
 
 // In-Memory Store für IP-Tracking
 // Struktur: { "ip": { requests: [timestamps], lastReset: dateString } }
@@ -240,14 +240,8 @@ app.get("/rate-limit-status", (req, res) => {
   });
 });
 
-// Statische Auslieferung des Frontends
-// Der Ordner ../frontend enthält deine index.html und Assets
-const frontendPath = path.join(__dirname, "../frontend");
-app.use(express.static(frontendPath));
-
-
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Server läuft auf Port ${PORT}`);
+  console.log(`Server läuft auf http://localhost:${PORT}`);
   console.log(`Rate-Limiting aktiviert: ${GLOBAL_DAILY_LIMIT} globale Anfragen/Tag`);
 });
